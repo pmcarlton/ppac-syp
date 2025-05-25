@@ -52,22 +52,6 @@ def do_full_mean_max_comparison(filepath, emblist):
         fk2 = list(fh.keys())
         for i in fk2:
             for e in range(embl):
-                # embdict[e]=np.mean(np.max(cdist(np.array(fh[i]),emblist[e]),axis=0))
-                embdict[e] = do_one_mean_max_comparison(np.array(fh[i]), emblist[e])
+                embdict[e][i] = do_one_mean_max_comparison(np.array(fh[i]), emblist[e])
     sypdfm = pd.DataFrame.from_dict({i: embdict[i] for i in range(len(embdict))}, orient="columns")
     return sypdfm
-
-
-# this version might work better, since the above gave an error
-def do_full_mean_max_comparison2(filepath, emblist):
-    # highly customized example, with a file of embeddings and assuming you already have other embeddings in a list
-    embl = len(emblist)
-    scoredictlist = [{} for x in range(embl)]
-    with h5py.File(filepath) as fh:
-        fk2 = list(fh.keys())
-        for i in fk2:
-            for e in range(embl):
-                scoredictlist[e] = do_one_mean_max_comparison(np.array(fh[i]), emblist[e])
-    return scoredictlist
-    # sypdfm=pd.DataFrame.from_dict({i: scoredictlist[i] for i in range(len(scoredictlist))}, orient='columns')
-    # return(sypdfm)
