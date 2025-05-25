@@ -1,0 +1,35 @@
+1. 
+keys for hd5 files:
+
+>> h5dump -H /data6/bio/embeddings/p_pacificus.ann.c95.per_residue_embeddings.h5 | head -n 100
+(example:)
+
+HDF5 "/data6/bio/embeddings/p_pacificus.ann.c95.per_residue_embeddings.h5" {
+GROUP "/" {
+
+   DATASET "A0A2A6BZ62_PRIPA sypCandidate_NOT_CED-3 OS=Pristionchus pacificus OX=54126 GN=WBGene00097791x PE=3 SV=1 4hits:emb_150
+40x" {
+      DATATYPE  H5T_IEEE_F32LE
+      DATASPACE  SIMPLE { ( 963, 1024 ) / ( 963, 1024 ) }
+   }
+
+ DATASET "tr|A0A2A6B2D0|A0A2A6B2D0_PRIPA Uncharacterized protein OS=Pristionchus pacificus OX=54126 GN=WBGene00105403 PE=4 SV=1
+" {
+      DATATYPE  H5T_IEEE_F32LE
+      DATASPACE  SIMPLE { ( 348, 1024 ) / ( 348, 1024 ) }
+   }
+
+
+>> h5dump -H /data6/bio/embeddings/c_elegans_ann.c95.per_residue_embeddings.h5
+(example:)
+
+HDF5 "/data6/bio/embeddings/c_elegans_ann.c95.per_residue_embeddings.h5" {
+GROUP "/" {
+
+   DATASET "2L52_1a_1_1 loc:II(+)1848-5514 segs:1-45,46-234,235-385,386-491,492-638,639-821,822-1284 gene_version=1;gene_source=W
+ormBase;gene_biotype=protein_coding;transcript_source=WormBase;transcript_biotype=protein_coding;gene_name=2L52_1;protein_id=2L52
+_1a_1" {
+      DATATYPE  H5T_IEEE_F32LE
+      DATASPACE  SIMPLE { ( 428, 1024 ) / ( 428, 1024 ) }
+   }
+
